@@ -17,20 +17,19 @@ export default function RecuperacionScreen() {
         </View>
 
         <Text style={styles.instructions}>
-          Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
+          Selecciona una forma para recuperar tu contraseña.
         </Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Correo electrónico"
-          placeholderTextColor="#999"
-          value={email}
-          onChangeText={setEmail}
-        />
-
+        {/* Botón: Recuperar con Correo */}
         <TouchableOpacity style={styles.button}>
-          <Ionicons name="send" size={24} color="#fff" />
-          <Text style={styles.buttonText}>Enviar Enlace de Recuperación</Text>
+          <Ionicons name="mail" size={24} color="#fff" />
+          <Text style={styles.buttonText}>Recuperar con Correo</Text>
+        </TouchableOpacity>
+
+        {/* Botón: Recuperar con Número */}
+        <TouchableOpacity style={[styles.button, { backgroundColor: "#0066aa", marginTop: 15 }]}>
+          <Ionicons name="call" size={24} color="#fff" />
+          <Text style={styles.buttonText}>Recuperar con Número</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.secondaryButton}>
@@ -72,18 +71,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 40,
     lineHeight: 22,
-  },
-  input: {
-    width: "100%",
-    backgroundColor: "#fff",
-    paddingVertical: 18,
-    paddingHorizontal: 20,
-    borderRadius: 12,
-    fontSize: 16,
-    color: "#333",
-    borderWidth: 2,
-    borderColor: "#4BC7F3",
-    marginBottom: 25,
   },
   button: {
     flexDirection: "row",
