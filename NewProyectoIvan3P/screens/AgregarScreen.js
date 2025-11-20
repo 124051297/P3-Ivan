@@ -7,7 +7,6 @@ export default function AgregarScreen() {
   const [descripcion, setDescripcion] = useState("");
   const [categoria, setCategoria] = useState("");
   const [tipo, setTipo] = useState("gasto");
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -34,7 +33,6 @@ export default function AgregarScreen() {
               <Text style={[styles.typeText, tipo === 'gasto' && styles.typeTextActive]}>Gasto</Text>
             </TouchableOpacity>
           </View>
-
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Monto</Text>
             <TextInput
@@ -46,7 +44,6 @@ export default function AgregarScreen() {
               keyboardType="numeric"
             />
           </View>
-
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Descripción</Text>
             <TextInput
@@ -57,7 +54,6 @@ export default function AgregarScreen() {
               onChangeText={setDescripcion}
             />
           </View>
-
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Categoría</Text>
             <TextInput
@@ -68,7 +64,6 @@ export default function AgregarScreen() {
               onChangeText={setCategoria}
             />
           </View>
-
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Fecha</Text>
             <TextInput
@@ -78,7 +73,6 @@ export default function AgregarScreen() {
               value={new Date().toLocaleDateString()}
             />
           </View>
-
           <TouchableOpacity style={styles.submitButton}>
             <Ionicons name="save" size={24} color="#fff" />
             <Text style={styles.submitButtonText}>Guardar Transacción</Text>
