@@ -39,7 +39,9 @@ export default function MenuScreen() {
     default:
       return (
         <View style={styles.container}>
+
           <Text style={styles.title}>MI APP</Text>
+
           <ScrollView style={styles.menuList}>
             <Text style={styles.categoryTitle}>🔐 AUTENTICACIÓN</Text>
             <TouchableOpacity style={styles.menuButton} onPress={() => setScreen('AutoScreen')}>
@@ -53,32 +55,41 @@ export default function MenuScreen() {
             </TouchableOpacity>
 
             <Text style={styles.categoryTitle}>💳 GESTIÓN DE TRANSACCIONES</Text>
+            
             <TouchableOpacity style={styles.menuButton} onPress={() => setScreen('CrudScreen')}>
               <Text style={styles.buttonText}>Menú Principal CRUD</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.subMenuButton} onPress={() => setScreen('AgregarScreen')}>
               <Text style={styles.subButtonText}>➕ Agregar Transacción</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.subMenuButton} onPress={() => setScreen('ListaScreen')}>
               <Text style={styles.subButtonText}>📋 Listar Transacciones</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.subMenuButton} onPress={() => setScreen('EditarScreen')}>
               <Text style={styles.subButtonText}>✏️ Editar Transacción</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.subMenuButton} onPress={() => setScreen('EliminarScreen')}>
               <Text style={styles.subButtonText}>🗑️ Eliminar Transacción</Text>
             </TouchableOpacity>
 
             <Text style={styles.categoryTitle}>📊 GRÁFICAS</Text>
+
             <TouchableOpacity style={styles.menuButton} onPress={() => setScreen('GraficaScreen')}>
               <Text style={styles.buttonText}>Gráficas y Reportes</Text>
             </TouchableOpacity>
 
             <Text style={styles.categoryTitle}>💰 PRESUPUESTOS</Text>
+
             <TouchableOpacity style={styles.menuButton} onPress={() => setScreen('PresupuestoScreen')}>
               <Text style={styles.buttonText}>Presupuestos Mensuales</Text>
             </TouchableOpacity>
           </ScrollView>
+
+
         </View>
       );
   }
