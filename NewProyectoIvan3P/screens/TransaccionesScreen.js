@@ -26,8 +26,8 @@ export default function TransaccionesScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tarjeta}>
-          <Text style={styles.tarjetaTitulo}>Eliminar Transacción</Text>
-          <Text style={styles.tarjetaDescripcion}>Remover transacciones</Text>
+          <Text style={styles.tarjetaTitulo}>Eliminar Transacción </Text>
+          <Text style={styles.tarjetaDescripcion}>Remover transacciones </Text>
         </TouchableOpacity>
 
         <Text style={styles.seccionTitulo}>Filtrado</Text>
