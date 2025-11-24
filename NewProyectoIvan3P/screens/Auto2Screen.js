@@ -24,7 +24,6 @@ export default function Auto2Screen() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -16,7 +16,7 @@ export default function AgregarScreen() {
       <ScrollView style={styles.content}>
         <View style={styles.formContainer}>
           <Text style={styles.formTitle}>Nueva Transacción</Text>
-          
+
           <View style={styles.typeSelector}>
             <TouchableOpacity 
               style={[styles.typeButton, tipo === 'ingreso' && styles.typeButtonActive]}
@@ -38,8 +38,8 @@ export default function AgregarScreen() {
             <TextInput
               style={styles.input}
               placeholder="$0.00"
-              placeholderTextColor="#999"
-              value={monto}
+              placeholderTextColor = "#999"
+              value={ monto }
               onChangeText={setMonto}
               keyboardType="numeric"
             />
