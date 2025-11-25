@@ -2,8 +2,22 @@ import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function RecuperacionScreen() {
+export default function RecuperacionScreen({ navigation }) {
   const [email, setEmail] = useState("");
+
+  const enviarCorreo = () => {
+    if (!email.includes("@")) 
+    {
+      alert("Ingresa un correo válido");
+      return;
+    }
+    else
+    {
+      alert(`Se ha enviado un enlace de recuperación a ${email}`);
+      setEmail("");
+    }
+    
+  };
 
   return (
     <View style={styles.container}>
@@ -28,12 +42,15 @@ export default function RecuperacionScreen() {
           onChangeText={setEmail}
         />
 
-        <TouchableOpacity style={styles.button}>
-          <Ionicons name="send" size={24} color="#fff" />
+        <TouchableOpacity style={styles.button} onPress={enviarCorreo}>
+          <Ionicons name="send" size={24} color="#fff" style={styles.iconButton} />
           <Text style={styles.buttonText}>Enviar Enlace de Recuperación</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.secondaryButton}>
+        <TouchableOpacity
+          style={styles.secondaryButton}
+          onPress={() => navigation.navigate("MenuScreen")}
+        >
           <Text style={styles.secondaryButtonText}>Volver al Inicio de Sesión</Text>
         </TouchableOpacity>
       </View>
@@ -92,8 +109,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#004481",
     paddingVertical: 18,
     borderRadius: 12,
-    gap: 12,
     width: "100%",
+  },
+  iconButton: {
+    marginRight: 12,
   },
   buttonText: {
     color: "#fff",
