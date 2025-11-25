@@ -51,21 +51,21 @@ export default function AgregarScreen() {
               placeholder="Descripción de la transacción"
               placeholderTextColor="#999"
               value={descripcion}
-              onChangeText={setDescripcion}
+              onChangeText= {setDescripcion}
             />
           </View>
-          <View style={styles.inputGroup}>
-            <Text style={styles.label}>Categoría</Text>
+          <View style= {styles.inputGroup}>
+            <Text style= {styles.label}>Categoría</Text>
             <TextInput
-              style={styles.input}
+              style= {styles.input}
               placeholder="Selecciona una categoría"
               placeholderTextColor="#999"
               value={categoria}
               onChangeText={setCategoria}
             />
           </View>
-          <View style={styles.inputGroup}>
-            <Text style={styles.label}>Fecha</Text>
+          <View style= {styles.inputGroup}>
+            <Text style= {styles.label}>Fecha</Text>
             <TextInput
               style={styles.input}
               placeholder="DD/MM/AAAA"
