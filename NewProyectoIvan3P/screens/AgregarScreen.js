@@ -7,6 +7,17 @@ export default function AgregarScreen() {
   const [descripcion, setDescripcion] = useState("");
   const [categoria, setCategoria] = useState("");
   const [tipo, setTipo] = useState("gasto");
+  const [fecha, setFecha] = useState(new Date().toLocaleDateString());
+
+  const handleGuardar = () => {
+    if (!monto || !descripcion || !categoria) {
+      alert("Por favor completa todos los campos.");
+      return;
+    }
+    console.log({ monto, descripcion, categoria, tipo, fecha });
+    alert("Transacción guardada correctamente.");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -18,32 +29,34 @@ export default function AgregarScreen() {
           <Text style={styles.formTitle}>Nueva Transacción</Text>
 
           <View style={styles.typeSelector}>
-            <TouchableOpacity 
-              style={[styles.typeButton, tipo === 'ingreso' && styles.typeButtonActive]}
-              onPress={() => setTipo('ingreso')}
+            <TouchableOpacity
+              style={[styles.typeButton, tipo === "ingreso" && styles.typeButtonActive]}
+              onPress={() => setTipo("ingreso")}
             >
-              <Ionicons name="trending-up" size={20} color={tipo === 'ingreso' ? '#fff' : '#34C759'} />
-              <Text style={[styles.typeText, tipo === 'ingreso' && styles.typeTextActive]}>Ingreso</Text>
+              <Ionicons name="trending-up" size={20} color={tipo === "ingreso" ? "#fff" : "#34C759"} />
+              <Text style={[styles.typeText, tipo === "ingreso" && styles.typeTextActive]}>Ingreso</Text>
             </TouchableOpacity>
-            <TouchableOpacity 
-              style={[styles.typeButton, tipo === 'gasto' && styles.typeButtonActive]}
-              onPress={() => setTipo('gasto')}
+            <TouchableOpacity
+              style={[styles.typeButton, tipo === "gasto" && styles.typeButtonActive]}
+              onPress={() => setTipo("gasto")}
             >
-              <Ionicons name="trending-down" size={20} color={tipo === 'gasto' ? '#fff' : '#FF3B30'} />
-              <Text style={[styles.typeText, tipo === 'gasto' && styles.typeTextActive]}>Gasto</Text>
+              <Ionicons name="trending-down" size={20} color={tipo === "gasto" ? "#fff" : "#FF3B30"} />
+              <Text style={[styles.typeText, tipo === "gasto" && styles.typeTextActive]}>Gasto</Text>
             </TouchableOpacity>
           </View>
+
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Monto</Text>
             <TextInput
               style={styles.input}
               placeholder="$0.00"
-              placeholderTextColor = "#999"
-              value={ monto }
+              placeholderTextColor="#999"
+              value={monto}
               onChangeText={setMonto}
               keyboardType="numeric"
             />
           </View>
+
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Descripción</Text>
             <TextInput
@@ -51,29 +64,33 @@ export default function AgregarScreen() {
               placeholder="Descripción de la transacción"
               placeholderTextColor="#999"
               value={descripcion}
-              onChangeText= {setDescripcion}
+              onChangeText={setDescripcion}
             />
           </View>
-          <View style= {styles.inputGroup}>
-            <Text style= {styles.label}>Categoría</Text>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Categoría</Text>
             <TextInput
-              style= {styles.input}
+              style={styles.input}
               placeholder="Selecciona una categoría"
               placeholderTextColor="#999"
               value={categoria}
               onChangeText={setCategoria}
             />
           </View>
-          <View style= {styles.inputGroup}>
-            <Text style= {styles.label}>Fecha</Text>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Fecha</Text>
             <TextInput
               style={styles.input}
               placeholder="DD/MM/AAAA"
               placeholderTextColor="#999"
-              value={new Date().toLocaleDateString()}
+              value={fecha}
+              onChangeText={setFecha}
             />
           </View>
-          <TouchableOpacity style={styles.submitButton}>
+
+          <TouchableOpacity style={styles.submitButton} onPress={handleGuardar}>
             <Ionicons name="save" size={24} color="#fff" />
             <Text style={styles.submitButtonText}>Guardar Transacción</Text>
           </TouchableOpacity>
