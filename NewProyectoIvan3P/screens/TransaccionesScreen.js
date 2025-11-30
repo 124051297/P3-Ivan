@@ -4,7 +4,7 @@ export default function TransaccionesScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitulo}>Gestión de Transacciones</Text>
+        <Text style={styles.headerTitulo}>Gestión de Transacciones </Text>
       </View>
 
       <ScrollView style={styles.content}>
