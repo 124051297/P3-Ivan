@@ -29,7 +29,7 @@ export default function RecuperacionScreen() {
         {/* Botón: Recuperar con Número */}
         <TouchableOpacity style={[styles.button, { backgroundColor: "#0066aa", marginTop: 15 }]}>
           <Ionicons name="call" size={24} color="#fff" />
-          <Text style={styles.buttonText}>Recuperar con Número</Text>
+          <Text style={styles.buttonText}>Recuperación con Número</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.secondaryButton}>
