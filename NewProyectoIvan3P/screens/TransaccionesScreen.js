@@ -63,10 +63,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
   },
+
   content: {
     flex: 1,
     padding: 20,
   },
+
   seccionTitulo: {
     fontSize: 18,
     fontWeight: "bold",
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginTop: 10,
   },
+
   tarjeta: {
     backgroundColor: "#fff",
     padding: 20,
@@ -85,16 +88,19 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
+
   tarjetaTitulo: {
     fontSize: 16,
     fontWeight: "600",
     color: "#333",
     marginBottom: 5,
   },
+
   tarjetaDescripcion: {
     fontSize: 14,
     color: "#666",
   },
+
   filtros: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -107,6 +113,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     alignItems: "center",
   },
+  
   filtroTexto: {
     color: "#2a6db0",
     fontWeight: "500",
