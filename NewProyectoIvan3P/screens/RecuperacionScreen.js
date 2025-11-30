@@ -1,24 +1,21 @@
 import { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 export default function RecuperacionScreen({ navigation }) {
   const [email, setEmail] = useState("");
 
+  const validarCorreo = (correo) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(correo);
+  };
   const enviarCorreo = () => {
-    if (!email.includes("@")) 
-    {
-      alert("Ingresa un correo válido");
+    if (!validarCorreo(email)) {
+      Alert.alert("Correo inválido", "Por favor ingresa un correo válido.");
       return;
     }
-    else
-    {
-      alert(`Se ha enviado un enlace de recuperación a ${email}`);
-      setEmail("");
-    }
-    
+    Alert.alert("Enlace enviado", `Se ha enviado un enlace de recuperación a ${email}`);
+    setEmail("");
   };
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -40,9 +37,10 @@ export default function RecuperacionScreen({ navigation }) {
           placeholderTextColor="#999"
           value={email}
           onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
         />
-
-        <TouchableOpacity style={styles.button} onPress={enviarCorreo}>
+        <TouchableOpacity style={styles.button} onPress={enviarCorreo} activeOpacity={0.8}>
           <Ionicons name="send" size={24} color="#fff" style={styles.iconButton} />
           <Text style={styles.buttonText}>Enviar Enlace de Recuperación</Text>
         </TouchableOpacity>
@@ -50,6 +48,7 @@ export default function RecuperacionScreen({ navigation }) {
         <TouchableOpacity
           style={styles.secondaryButton}
           onPress={() => navigation.navigate("MenuScreen")}
+          activeOpacity={0.7}
         >
           <Text style={styles.secondaryButtonText}>Volver al Inicio de Sesión</Text>
         </TouchableOpacity>
@@ -57,7 +56,6 @@ export default function RecuperacionScreen({ navigation }) {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
