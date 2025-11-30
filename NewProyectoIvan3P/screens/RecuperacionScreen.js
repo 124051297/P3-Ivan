@@ -23,7 +23,7 @@ export default function RecuperacionScreen() {
         {/* Botón: Recuperar con Correo */}
         <TouchableOpacity style={styles.button}>
           <Ionicons name="mail" size={24} color="#fff" />
-          <Text style={styles.buttonText}>Recuperar con Correo</Text>
+          <Text style={styles.buttonText}>Recuperación con Correo</Text>
         </TouchableOpacity>
 
         {/* Botón: Recuperar con Número */}
