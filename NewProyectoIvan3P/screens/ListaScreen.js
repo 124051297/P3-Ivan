@@ -9,7 +9,7 @@ export default function ListaScreen() {
     { id: 4, descripcion: "Freelance", monto: 800, tipo: "ingreso", categoria: "Extra", fecha: "05/03/2024" },
     { id: 5, descripcion: "Gasolina", monto: 280, tipo: "gasto", categoria: "Transporte", fecha: "12/03/2024" },
   ];
-
+// salarios
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -234,8 +234,11 @@ const styles = StyleSheet.create({
   },
   incomeAmount: {
     color: "#34C759",
+
   },
+
   expenseAmount: {
     color: "#FF3B30",
+    
   },
 });
