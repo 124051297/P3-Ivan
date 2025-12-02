@@ -21,9 +21,11 @@ export default function MesScreen({ onBack }) {
       </View>
 
       <ScrollView style={styles.content}>
+
         <View style={styles.chartSection}>
           <Text style={styles.sectionTitle}>Evolución Mensual</Text>
           <View style={styles.chartContainer}>
+
             <View style={styles.chartPlaceholder}>
               <Ionicons name="analytics" size={64} color="#2a6db0" />
               <Text style={styles.chartPlaceholderText}>Gráfica de Tendencias</Text>
@@ -43,6 +45,7 @@ export default function MesScreen({ onBack }) {
           </View>
 
           <View style={styles.statCard}>
+            
             <Text style={styles.statValue}>$48,050</Text>
             <Text style={styles.statLabel}>Gastos Totales</Text>
             <View style={[styles.trend, styles.trendUp]}>
