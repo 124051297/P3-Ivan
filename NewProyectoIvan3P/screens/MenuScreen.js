@@ -7,7 +7,7 @@ import CrudScreen from './CrudScreen';
 import AgregarScreen from './AgregarScreen';
 import ListaScreen from './ListaScreen';
 import EditarScreen from './EditarScreen';
-import EliminarScreen from './EliminarScreen';
+import EliminarScreen from './EliminarScreen'; 
 import GraficaScreen from './GraficaScreen';
 import PresupuestoScreen from './PresupuestoScreen';
 
