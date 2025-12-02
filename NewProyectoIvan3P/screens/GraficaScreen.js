@@ -13,7 +13,7 @@ export default function GraficaScreen() {
           <Text style={styles.chartTitle}>Ingresos vs Egresos - Marzo 2024</Text>
           <View style={styles.chartPlaceholder}>
             <Ionicons name="bar-chart" size={64} color="#2a6db0" />
-            <Text style={styles.chartText}>Gráfica de Barras Comparativa</Text>
+            <Text style={styles.chartText}>Gráfica de Barras Comparativa </Text>
           </View>
           <View style={styles.chartLegend}>
             <View style={styles.legendItem}>

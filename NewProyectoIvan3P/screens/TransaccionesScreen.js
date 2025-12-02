@@ -4,7 +4,7 @@ export default function TransaccionesScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitulo}>Gestión de Transacciones</Text>
+        <Text style={styles.headerTitulo}>Gestión de Transacciones </Text>
       </View>
 
       <ScrollView style={styles.content}>
@@ -26,8 +26,8 @@ export default function TransaccionesScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.tarjeta}>
-          <Text style={styles.tarjetaTitulo}>Eliminar Transacción</Text>
-          <Text style={styles.tarjetaDescripcion}>Remover transacciones</Text>
+          <Text style={styles.tarjetaTitulo}>Eliminar Transacción </Text>
+          <Text style={styles.tarjetaDescripcion}>Remover transacciones </Text>
         </TouchableOpacity>
 
         <Text style={styles.seccionTitulo}>Filtrado</Text>
