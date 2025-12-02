@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
-export default function RecuperacionScreen() {
+export default function RecuperacionScreen({ navigation }) {
   const [email, setEmail] = useState("");
 
+  const validarCorreo = (correo) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(correo);
+  };
+  const enviarCorreo = () => {
+    if (!validarCorreo(email)) {
+      Alert.alert("Correo inválido", "Por favor ingresa un correo válido.");
+      return;
+    }
+    Alert.alert("Enlace enviado", `Se ha enviado un enlace de recuperación a ${email}`);
+    setEmail("");
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -32,14 +43,17 @@ export default function RecuperacionScreen() {
           <Text style={styles.buttonText}>Recuperación con Número</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.secondaryButton}>
+        <TouchableOpacity
+          style={styles.secondaryButton}
+          onPress={() => navigation.navigate("MenuScreen")}
+          activeOpacity={0.7}
+        >
           <Text style={styles.secondaryButtonText}>Volver al Inicio de Sesión</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -79,8 +93,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#004481",
     paddingVertical: 18,
     borderRadius: 12,
-    gap: 12,
     width: "100%",
+  },
+  iconButton: {
+    marginRight: 12,
   },
   buttonText: {
     color: "#fff",

@@ -7,13 +7,12 @@ export default function PresupuestoScreen() {
       <View style={styles.header}>
         <Text style={styles.headerTitulo}>Presupuestos Mensuales</Text>
       </View>
-
       <ScrollView style={styles.content}>
         <View style={styles.budgetOverview}>
           <Text style={styles.overviewTitle}>Presupuesto Actual - Marzo 2024</Text>
           <Text style={styles.overviewAmount}>$10,000</Text>
           <View style={styles.progressBar}>
-            <View style={[styles.progressFill, { width: '65%' }]} />
+            <View style={[styles.progressFill, {width: '65%' }]} />
           </View>
           <Text style={styles.overviewSubtitle}>Gastado: $6,500 / Restante: $3,500</Text>
         </View>
@@ -23,7 +22,7 @@ export default function PresupuestoScreen() {
           
           <TouchableOpacity style={styles.budgetCard}>
             <View style={styles.budgetIcon}>
-              <Ionicons name="add-circle" size={28} color="#2a6db0" />
+              <Ionicons name="add-circle" size={28}color="#2a6db0" />
             </View>
             <View style={styles.budgetText}>
               <Text style={styles.budgetAction}>Definir Presupuesto</Text>
@@ -33,7 +32,7 @@ export default function PresupuestoScreen() {
 
           <TouchableOpacity style={styles.budgetCard}>
             <View style={styles.budgetIcon}>
-              <Ionicons name="eye" size={28} color="#2a6db0" />
+              <Ionicons name="eye" size={28}color="#2a6db0" />
             </View>
             <View style={styles.budgetText}>
               <Text style={styles.budgetAction}>Ver Presupuestos</Text>
